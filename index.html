@@ -15,6 +15,7 @@
 
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/tooplate-style.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     
 <!--
 
@@ -224,7 +225,7 @@ https://www.tooplate.com/view/2115-marvel
                 </div>
 
                 <ul class="social-links">
-                     <li><a href="www.linkedin.com/in/mohamed-nadeem" class="uil uil-dribbble" data-toggle="tooltip" data-placement="left" title="LinkedIn"></a></li>
+                     <li><a href="https://www.linkedin.com/in/mohamed-nadeem" target="_blank" rel="noopener noreferrer" class="uil uil-dribbble" data-toggle="tooltip" data-placement="left" title="LinkedIn"></a></li>
                      <li><a href="mailto:mnadeem.es@gmail.com" class="uil uil-envelope-edit" data-toggle="tooltip" data-placement="left" title="Gmail"></a></li>
                 </ul>
             </div>
@@ -234,7 +235,7 @@ https://www.tooplate.com/view/2115-marvel
             <div class="contact-form">
               <h2 class="mb-4">Interested to work together? Let's talk</h2>
 
-              <form action="" method="get">
+              <form id="contact-me-form" action="https://formcarry.com/s/VjdpMQ4qgLV" method="POST" enctype="multipart/form-data">
                 <div class="row">
                   <div class="col-lg-6 col-12">
                     <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
@@ -245,11 +246,11 @@ https://www.tooplate.com/view/2115-marvel
                   </div>
 
                   <div class="col-12">
-                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                    <textarea name="message" rows="6" class="form-control" name="message" id="message" placeholder="Message"></textarea>
                   </div>
 
                   <div class="ml-lg-auto col-lg-5 col-12">
-                    <input type="submit" class="form-control submit-btn" value="Send Button">
+                    <button type="submit" class="g-recaptcha form-control submit-btn" data-sitekey="6LdR0M8pAAAAAKpTMvMBDUAw2Wmp58LvwjzpCtcH" data-callback='onSubmit' data-action='submit'>Submit</button> 
                   </div>
                 </div>
               </form>
@@ -273,7 +274,11 @@ https://www.tooplate.com/view/2115-marvel
                </div>
           </div>
      </footer>
-
+    <script>
+        function onSubmit(token) {
+          document.getElementById("contact-me-form").submit();
+        }
+    </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -282,6 +287,7 @@ https://www.tooplate.com/view/2115-marvel
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+    
 
   </body>
 </html>
