@@ -188,12 +188,15 @@ a.btn {
 
 .animated {
   position: relative;
+  font-size: 38px;
+  margin:10px;
+  margin-left:0;
 }
 
 .animated-info {
   display: inline-block;
   vertical-align: top;
-  margin-top: 5px;
+  margin-top: 0px;
   min-width: 260px;
   position: relative;
 }
@@ -644,10 +647,10 @@ a.btn {
 }
 @media (max-width: 580px) {
 	.animated-info {
-		min-width: 200px;
+		min-width: 300px;
 	}
   .animated-item {
-    font-size: 40px;
+    font-size: 38px;
   }
 
   .custom-btn-group {
