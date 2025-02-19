@@ -137,10 +137,7 @@ h7 {
 }
 
 a.btn {
-  display: inline-flexbox;
   margin-top: 10px;
-  align-items: center;
-  justify-content: center;
 }
 
 .custom-btn {
@@ -757,4 +754,9 @@ a.btn {
     display: inline-block;
     vertical-align: top;
   }
+}
+
+.linkedin{
+  height:20px;
+  width:20px;
 }
