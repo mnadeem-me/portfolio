@@ -58,7 +58,7 @@ a:hover {
 }
 
 .navbar-brand .uil {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 p {
@@ -137,7 +137,10 @@ h7 {
 }
 
 a.btn {
+  display: inline-flexbox;
   margin-top: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-btn {
@@ -182,6 +185,44 @@ a.btn {
   color: #ffffff;
 }
 .dark-mode .custom-btn.custom-btn-bg:hover {
+  background: #38B6FF;
+  color: #ffffff !important;
+}
+
+.custom-btn-small {
+  color: #5b5b5b;
+  font-size: 12px;
+  line-height: normal;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.custom-btn-small:hover {
+  color: #ffc200;
+}
+.custom-btn-small.custom-btn-small-bg {
+  background: #474559;
+  color: #ffffff;
+}
+.custom-btn-small.custom-btn-small-bg:hover {
+  background: #ffc200; 
+  color: #ffffff !important;
+}
+
+.dark-mode .custom-btn-small {
+  color: #eee;
+  font-size: 12px;
+  line-height: normal;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.dark-mode .custom-btn-small:hover {
+  color: #38B6FF;
+}
+.dark-mode .custom-btn-small.custom-btn-small-bg {
+  background: #474559;
+  color: #ffffff;
+}
+.dark-mode .custom-btn-small.custom-btn-small-bg:hover {
   background: #38B6FF;
   color: #ffffff !important;
 }
@@ -297,7 +338,7 @@ a.btn {
 
 .nav-link {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   overflow: hidden;
 }
 .nav-link span {
@@ -314,7 +355,7 @@ a.btn {
 
 .dark-mode .nav-link {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   overflow: hidden;
 }
 .dark-mode .nav-link span {
@@ -384,6 +425,16 @@ a.btn {
   position: relative;
 }
 
+.dark-mode .navbar-toggler .navbar-toggler-icon {
+  background: #fff;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
 .copyright-text {
   font-size: 16px;
   font-weight: normal;
@@ -393,6 +444,14 @@ a.btn {
 .color-mode {
   font-weight: bold;
   cursor: pointer;
+  margin-left: auto; /* Pushes color mode to the far right */
+  display: flex;
+  align-items: center;
+}
+
+
+.color-mode-icon {
+  font-size: 20px; /* Adjust size */
 }
 
 .color-mode-icon {
@@ -628,23 +687,20 @@ a.btn {
     padding: 0 2rem;
   }
 }
+
 @media (max-width: 767px) {
-  h1 {
-    font-size: 2.4em;
-  }
-
-  h2 {
-    font-size: 2em;
-  }
-
   .animated-item {
-    font-size: 28px;
+    font-size: 38px;
   }
 
   .navbar-collapse {
     background: #ffffff;
     text-align: center;
-    padding-bottom: 20px;
+  }
+
+  .dark-mode .navbar-collapse {
+    background: #0F142A;
+    text-align: center;
   }
 
   .navbar-expand-sm .navbar-nav .nav-link {
@@ -665,7 +721,6 @@ a.btn {
 
   .custom-btn {
     display: block;
-    margin: 10px 0;
   }
 
   .owl-theme .owl-nav {
