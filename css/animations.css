@@ -1,0 +1,253 @@
+/* Splash Screen */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: hideSplashScreen 0.5s ease-out forwards;
+    animation-delay: 2.5s;
+}
+
+.splash-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.splash-initials {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--dark-color);
+    position: relative;
+    opacity: 0;
+    animation: splashInitials 1.5s ease-out forwards,
+               moveToNavbar 2s ease-in-out forwards;
+    animation-delay: 0s, 1s;
+}
+
+.splash-initials::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    animation: underline 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.splash-image {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    animation: splashImage 1.5s ease-out forwards,
+               moveToAbout 2s ease-in-out forwards;
+    animation-delay: 0.5s, 1s;
+}
+
+@keyframes hideSplashScreen {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes splashImage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes splashInitials {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes moveToNavbar {
+    0% {
+        font-size: 4rem;
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        font-size: 1.25rem;
+        transform: translate(calc(-50vw + 200px), calc(-50vh + 200px));
+        opacity: 0;
+    }
+}
+
+@keyframes moveToAbout {
+    0% {
+        width: 200px;
+        height: 200px;
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        width: 350px;
+        height: 350px;
+        transform: translate(calc(50vw - 350px), calc(-50vh + 200px));
+        opacity: 0;
+    }
+}
+
+@keyframes underline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Hide initial navbar brand and about image */
+.navbar-brand {
+    opacity: 0;
+    animation: showNavBrand 0.3s ease-out forwards;
+    animation-delay: 2s;
+}
+
+.about-image {
+    opacity: 0;
+    animation: showAboutImage 0.3s ease-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes showNavBrand {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes showAboutImage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Main content */
+.main-content {
+    opacity: 0;
+    animation: showContent 0.5s ease-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes showContent {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Essential transitions */
+.custom-btn, .nav-link {
+    transition: all 0.3s ease;
+}
+
+.color-mode-icon {
+    transition: transform 0.3s ease;
+}
+
+.color-mode-icon:hover {
+    transform: rotate(180deg);
+}
+
+/* Mobile Animations */
+@media screen and (max-width: 768px) {
+    .splash-initials {
+        font-size: 4rem;
+        font-weight: bold;
+        color: var(--dark-color);
+        position: relative;
+        opacity: 0;
+        animation: splashInitials 1.5s ease-out forwards,
+                   fadeOutInitials 1s ease-out forwards;
+        animation-delay: 0s, 1.5s;
+    }
+
+    .splash-image {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+        animation: splashImage 1.5s ease-out forwards,
+                   fadeOutImage 1s ease-out forwards;
+        animation-delay: 0.5s, 1.5s;
+    }
+
+    @keyframes fadeOutInitials {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+    }
+
+    @keyframes fadeOutImage {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+    }
+
+    .navbar-brand {
+        animation-delay: 2.2s;
+    }
+
+    .about-image {
+        animation-delay: 2.2s;
+    }
+
+    .main-content {
+        animation-delay: 2.2s;
+    }
+
+    .splash-screen {
+        animation-delay: 2.2s;
+    }
+} 
